@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIRCLO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h5 {
+            margin-top: 20px;
+        }
+        
+        h1 {
+            font-size: 24px;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        form button:hover {
+            background-color: #0056b3;
+        }
+        
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h5>Muhammad Rifqi Zaidan</h5>
+    <h5>Universitas Diponegoro</h5>
+    <h5>Untuk memenuhi tugas Technical Test Backend Engineer(Intern) SIRCLO GROUP</h5>
+    <br>
+    <div class="container text-center">
+        <h1>Tambah Data Berat Badan</h1>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Tambah</button>
+                </form>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <a href="{% url 'index' %}" class="btn btn-secondary">Kembali ke Daftar</a>
+        </div>
+    </div>
+</body>
+</html>

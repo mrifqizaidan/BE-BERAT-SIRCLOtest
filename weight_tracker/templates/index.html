@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SIRCLO</title>
+    <link rel="icon" href="sirclo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+      table {
+        text-align: center;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div class="container">
+      <h5>Muhammad Rifqi Zaidan</h5>
+      <h5>Universitas Diponegoro</h5>
+      <h5>Untuk memenuhi tugas Technical Test Backend Engineer(Intern) SIRCLO GROUP</h5>
+      <br>
+      <h1 class="text-center">Daftar Berat Badan</h1>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th class="text-center">Tanggal</th>
+            <th class="text-center">Max Berat(kg)</th>
+            <th class="text-center">Min Berat(kg)</th>
+            <th class="text-center">Perbedaan</th>
+            <th class="text-center">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for record in records %}
+          <tr>
+            <td><a href="{% url 'detail' record.id %}">{{ record.date }}</a></td>
+            <td>{{ record.max_weight }}</td>
+            <td>{{ record.min_weight }}</td>
+            <td>{{ record.differences }}</td>
+            <td>
+              <a href="{% url 'edit' record.id %}" class="btn btn-primary">Edit</a>
+              <a href="{% url 'hapus' record.id %}" class="btn btn-danger">Hapus</a>
+            </td>
+            
+          </tr>
+          {% endfor %}
+          <tr>
+            <td class="font-weight-bold">Rata-rata</td>
+            <td>{{ average_max_weight }}</td>
+            <td>{{ average_min_weight }}</td>
+            <td>{{ average_differences }}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-center">
+        <a href="{% url 'create' %}" class="btn btn-primary">Buat Data Tanggal Baru</a>
+      </div>
+    </div>
+  </body>
+</html>
