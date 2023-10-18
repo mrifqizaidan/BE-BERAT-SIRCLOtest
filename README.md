@@ -2,7 +2,13 @@
 Disusun untuk memenuhi tugas Technical Test SIRCLO GROUP posisi Software Engineer Intern (Backend)
 Muhammad Rifqi Zaidan - Universitas Diponegoro
 
-UNTUK MENJALANKAN PROGRAM SILAHKAN KETIK DI TERMINAL
+sebelum menjalankan program silahkan lakukan di terminal :
+
+pip install django 
+
+pip install django_extensions
+
+UNTUK MENJALANKAN PROGRAM SILAHKAN LAKUKAN DI TERMINAL
 
 python manage.py makemigrations
 
