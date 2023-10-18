@@ -5,7 +5,9 @@ Muhammad Rifqi Zaidan - Universitas Diponegoro
 UNTUK MENJALANKAN PROGRAM SILAHKAN KETIK DI TERMINAL
 
 python manage.py makemigrations
+
 python manage.py migrate
+
 python manage.py runserver
 
 lalu buka http://127.0.0.1:8000/ untuk melihat hasilnya
